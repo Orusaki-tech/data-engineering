@@ -14,10 +14,4 @@ services:
     restart: always
 
 
-docker run -it \
-  -e POSTGRES_USER: "root" \
-  -e POSTGRES_PASSWORD: "root" \
-  -e POSTGRES_DB: "root" \
-  -v C:\Users\MUFASA\Desktop\data-engineering\ny_data_set:/var/lib/postgresql/data \
-  -p 5432:5432 \
-  postgres:13
+docker run -it --name="postgres" -e POSTGRES_USER="postgres" -e POSTGRES_PASSWORD="password" -e POSTGRES_DB="ny_taxi_data" -v C:\Users\MUFASA\Desktop\data-engineering\ny_data_set:/var/lib/postgresql/data -d -p 5432:5432 postgres:alpine
